@@ -1,0 +1,22 @@
+# Load: Zsh Completion
+zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
+autoload -U compinit && compinit
+
+# Load: asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# Load: z
+. $(brew --prefix)/etc/profile.d/z.sh
+
+# Load: Zsh plugins
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Aliases
+alias lc='colorls -lA --sd'
+
+# Init: Spaceship prompt
+eval "$(starship init zsh)"
+
+# Add: Homebrew to PATH
+export PATH=/opt/homebrew/bin:$PATH
